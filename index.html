@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image hover effect</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+        height: 100vh;
+        background-color: rgb(253, 254, 255);
+        font-family: 'Lato', sans-serif;
+        font-weight: 100;
+        text-transform: uppercase;
+    }
+    html{
+        font-size: 62.5%;
+    }
+    .rahul
+    {
+        display: grid;
+        place-items: center;
+    }
+    h1{
+        text-align: center;
+        font-size: 4rem;
+        color: rgb(99, 99, 99);
+        letter-spacing: 0.3rem;
+        word-spacing: 0.5rem;
+        margin-bottom: 6rem;
+    }
+    .container{
+        background-color: #8ee5e3;
+        height: 55rem;
+        width: 55%;
+        border-radius: 2rem;
+        box-shadow:  0 0.75rem 4rem 0 rgb(100 100 100 / 60%);    
+        position: relative;
+    }
+    .clip{
+        border-radius: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: inherit;
+        width: 100%;
+        z-index: 100;
+        /* box-shadow:  0 0.75rem 4rem 0 rgb(100 100 100 / 60%); */
+        transition: all 0.3s linear;
+    }
+    .img1{
+        background: url('img/pexels-photo-5402947.jpeg');
+        background-position: center;
+        background-size: cover;
+        clip-path: polygon(25% 0, 75% 0, 65% 100%, 30% 100%);
+    }
+    .img2{
+        background: url('img/pexels-photo-7887894.jpeg');
+        background-position: right;
+        background-size: cover;      
+        clip-path: polygon(75% 0, 100% 0, 100% 100%, 60% 100%);
+    }
+    .img3{
+        background: url('img/pexels-photo-1143489.jpeg');
+        background-position: left;
+        background-size: cover;
+        clip-path: polygon(0 0, 26% 0, 40% 100%, 0 100%);
+    }
+ .container:hover .clip{
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+ }
+ .container .clip:hover{
+    clip-path: polygon(0 0, 100% 0, 100% 100%,  0 100%);
+    background-size: cover;
+ }
+ @media (max-width:1024px) {
+     .container{
+             height: 69rem;
+         width: 82%;
+     }
+     h1{
+         font-size: 5rem;
+         margin-bottom: 8rem;
+     }
+     .rahul{
+    margin-top: 20rem;
+}
+ }
+ 
+ @media (max-width:768px) {
+     .container{
+         height: 53rem;
+         width: 87%;
+     }
+     h1{
+         font-size: 3rem;   
+         margin-bottom: 7rem; 
+     }
+.rahul{
+    margin-top: 10rem;
+}
+ }
+ @media (max-width:500px) {
+     .container{
+         height: 33rem;
+         width: 87%;
+     }
+     h1{
+         font-size: 3rem;    
+     }
+.rahul{
+    margin-top: 10rem;
+}
+ }
+</style>
+<body>
+
+    <div class="rahul">
+        <h1>css image hover effect</h1>
+    <div class="container">
+        <div class="clip img1"></div>
+        <div class="clip img2"></div>
+        <div class="clip img3"></div>
+    </div>
+</div>
+</body>
+</html>
